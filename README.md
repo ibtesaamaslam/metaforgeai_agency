@@ -1,7 +1,3 @@
-
-<img width="1024" height="682" alt="image" src="https://github.com/user-attachments/assets/c3a54ef7-e1f5-48c0-bddd-c3dc12e7fb0e" />
-<br/>
-
 <div align="center">
 
 <img src="https://img.shields.io/badge/TypeScript-91.7%25-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
@@ -13,7 +9,7 @@
 <img src="https://img.shields.io/badge/Visibility-Private%20Repository-red?style=for-the-badge&logo=github&logoColor=white"/>
 <img src="https://img.shields.io/badge/License-Proprietary-FF0000?style=for-the-badge"/>
 
-<br/>
+<br/><br/>
 
 # ⚡ MetaForgeAI Agency
 ### *AI Agency Website · React 18 · TypeScript · shadcn/ui · Gemini AI · Vercel*
@@ -70,6 +66,7 @@ The project integrates **Google Gemini AI** for automated blog content generatio
 |-------------|-----|
 | Production (Vercel) | [metaforgeai-agency.vercel.app](https://metaforgeai-agency.vercel.app) |
 | Repository | Private — access granted by owner only |
+| Lovable Project | [lovable.dev/projects/84a95da8](https://lovable.dev/projects/84a95da8-48d4-4104-b637-140e2a14c68c) |
 
 ---
 
@@ -674,77 +671,21 @@ git push origin feature/your-feature-name
 ## 📜 License
 
 ```
-Proprietary License — Commercial Use Restricted
+Proprietary License
 
-Copyright (c) 2024 Ibtesaam Aslam
-All Rights Reserved.
+Copyright (c) 2024 Ibtesaam Aslam. All Rights Reserved.
 
+This software and its source code are the exclusive property of Ibtesaam Aslam.
+No part of this codebase may be copied, modified, distributed, sublicensed,
+sold, or used in any form — in whole or in part — without the express prior
+written permission of the copyright owner.
 
-1. Grant of Limited License
+Unauthorised use, reproduction, or distribution of this software, via any
+medium, is strictly prohibited and may result in severe civil and criminal
+penalties, and will be prosecuted to the maximum extent possible under applicable law.
 
-This software and associated documentation files (the "Software") are provided for viewing, evaluation, and non-commercial educational purposes only.
-
-You are granted a non-exclusive, non-transferable, revocable license to access and review the Software solely for personal reference.
-
-
-2. Permitted Use
-
-You may access and review the Software for personal learning, reference, and evaluation purposes only.
-
-No other rights are granted unless explicitly stated in writing by the author.
-
-
-3. Restrictions
-
-Except as expressly permitted above, you are strictly prohibited from:
-
-- Copying, reproducing, or redistributing the Software in whole or in part
-- Modifying, adapting, reverse engineering, or creating derivative works
-- Using the Software for commercial purposes, including but not limited to:
-  client work, freelance projects, SaaS, product development, or internal business use
-- Selling, sublicensing, leasing, or monetizing the Software
-- Removing or altering copyright notices
-- Claiming the Software as your own
-
-
-4. Commercial Use
-
-Any commercial use of the Software requires prior written permission from the author.
-
-Unauthorized commercial use constitutes a violation of this license and may result in legal action.
-
-
-5. Ownership
-
-All rights, title, and interest in and to the Software, including all intellectual property rights, remain the sole property of Ibtesaam Aslam.
-
-This license does not grant any ownership rights.
-
-
-6. Termination
-
-This license is effective until terminated.
-
-It will terminate automatically without notice if you violate any terms of this license. Upon termination, you must immediately cease all use of the Software and destroy any copies in your possession.
-
-
-7. Disclaimer of Warranty
-
-The Software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.
-
-
-8. Limitation of Liability
-
-In no event shall the author be liable for any claim, damages, or other liability arising from, out of, or in connection with the Software or the use or other dealings in the Software.
-
-
-9. Governing Law
-
-This license shall be governed and construed in accordance with the applicable laws of the relevant jurisdiction.
-
-
-By accessing or using this Software, you agree to be bound by the terms of this license.
-
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT ANY WARRANTY OF ANY KIND.
+THE AUTHOR ACCEPTS NO LIABILITY FOR ANY DAMAGES ARISING FROM UNAUTHORISED USE.
 ```
 
 | Permission | Status |

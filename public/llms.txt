@@ -1,0 +1,31 @@
+# MetaForgeAI
+
+MetaForgeAI is an enterprise-grade AI Solutions & Process Automation consulting and development agency. We architect custom artificial intelligence pipelines, intelligent automation setups, and custom machine learning modules tailored for modern mid-market and enterprise businesses looking to gain high-ROI efficiency.
+
+## Overview & Location
+- **Website:** https://metaforgeai.vercel.app
+- **Consultation Booking:** https://metaforgeai.vercel.app/book
+- **Primary Focus:** High-ROI enterprise-grade AI automation, Custom LLM fine-tuning, Predictive Analytics, and Intelligent workflow orchestrations.
+
+## Core Social Channels
+- **Reddit:** https://www.reddit.com/user/METAFORGEAI/
+- **Instagram:** https://www.instagram.com/meta_forge.ai?igsh=MWh5ZGF5NXJsdTc3eA==
+- **X (formerly Twitter):** https://x.com/metaforgeai
+
+## Navigation & Sitemap
+- **Home:** `/` — Core mission, stats, testimonials, and contact channel.
+- **Services:** `/services` — Granular look at all service packages and tiers.
+- **Portfolio:** `/portfolio` — Client case studies and results metrics.
+- **Blog:** `/blog` — Latest AI thought leadership and tech guides.
+- **Book Session:** `/book` — Schedule a free 15-minute consultation.
+
+## Core Services
+1. **AI Strategy & Consulting** — High-level feasibility studies, ROI modeling, and technical architecture roadmaps.
+2. **Custom AI Model Development** — Building, fine-tuning, and deployment of domain-specific language models and computer vision pipelines.
+3. **AI Process Automation** — Complex cross-platform workflow orchestration using LLMs, multi-agent frameworks, and autonomous workers.
+4. **Natural Language Processing Solutions** — Semantic search, sentiment engines, intelligence document understanding, and smart search.
+5. **Intelligent Web & App Development** — Modern application engineering with native LLM interfaces, streaming audio/text APIs, and interactive canvases.
+
+## For Deep Reading
+For a detailed markdown mirror of all main pages of this website, designed specifically for clean LLM ingestion, refer to:
+- **Full Markdown Mirrors:** `/llms-full.txt`

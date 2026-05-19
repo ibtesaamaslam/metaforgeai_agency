@@ -4,54 +4,103 @@ import {
   TrendingUp, 
   Eye, 
   Cog, 
-  Sparkles 
+  Sparkles,
+  Database,
+  Workflow,
+  Cpu,
+  Unplug,
+  ArrowRight
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
-  const services = [
+  const navigate = useNavigate();
+
+  const serviceCategories = [
     {
-      icon: Globe,
-      title: "Smart AI Web Apps & Personalization",
-      description: "AI-driven web applications, personalization, and automation that adapts to every visitor",
-      tags: ["AI Web Apps", "Personalization", "UX Optimization"]
+      category: "FLAGSHIP SERVICES",
+      items: [
+        {
+          icon: Database,
+          title: "RAG & Knowledge Base Systems",
+          description: "AI trained on your documents, SOPs, and databases for hyper-accurate search.",
+          badge: "Most popular",
+          badgeType: "popular",
+          tags: ["Vector Stores", "Custom Knowledge", "RAG Pipelines"]
+        },
+        {
+          icon: MessageCircle,
+          title: "AI Chatbots & Conversational Agents",
+          description: "24/7 intelligent support and lead capture systems that understand context.",
+          badge: "Most popular",
+          badgeType: "popular",
+          tags: ["Natural Language", "Lead Generation", "Support"]
+        },
+        {
+          icon: Workflow,
+          title: "AI Agent Workflows",
+          description: "Autonomous agents handling web research, data entry, email routing, and doc generation.",
+          badge: "New",
+          badgeType: "new",
+          tags: ["Autonomous Agents", "Orchestration", "BPA"]
+        }
+      ]
     },
     {
-      icon: MessageCircle,
-      title: "AI Chatbots & Conversational Agents",
-      description: "24/7 intelligent support and lead capture systems that understand context",
-      tags: ["Natural Language", "Lead Generation", "Customer Support"]
+      category: "BUILD & INTEGRATE",
+      items: [
+        {
+          icon: Cpu,
+          title: "LLM Fine-tuning & Custom Models",
+          description: "Domain-specific models trained on your proprietary data for privacy and accuracy.",
+          badge: "New",
+          badgeType: "new",
+          tags: ["Private Models", "Fine Tuning", "Proprietary Data"]
+        },
+        {
+          icon: Unplug,
+          title: "AI Integration & API Consulting",
+          description: "End-to-end AI integration into your ERPs, CRMs, and legacy software suites.",
+          tags: ["Legacy Integration", "API Engineering", "Consulting"]
+        },
+        {
+          icon: Globe,
+          title: "Smart AI Web Apps & Personalization",
+          description: "AI-driven web applications that adapt to every visitor in real time.",
+          tags: ["AI Web Apps", "Personalization", "UX Optimization"]
+        }
+      ]
     },
     {
-      icon: TrendingUp,
-      title: "Predictive Analytics",
-      description: "Advanced trend detection and forecasting to stay ahead of the market",
-      tags: ["Machine Learning", "Forecasting", "Business Intelligence"]
-    },
-    {
-      icon: Eye,
-      title: "Computer Vision Solutions",
-      description: "Intelligent recognition and automated inspection systems",
-      tags: ["Image Recognition", "Quality Control", "Automation"]
-    },
-    {
-      icon: Cog,
-      title: "Business Process Automation",
-      description: "Automate invoices, approvals, and onboarding with intelligent workflows",
-      tags: ["Workflow Automation", "Process Optimization", "Integration"]
-    },
-    {
-      icon: Sparkles,
-      title: "Generative Content & Brand Assistants",
-      description: "Scale your brand voice with AI-crafted content that maintains authenticity",
-      tags: ["Content Generation", "Brand Consistency", "Creative AI"]
+      category: "SPECIALIZED SOLUTIONS",
+      items: [
+        {
+          icon: TrendingUp,
+          title: "Predictive Analytics",
+          description: "Advanced trend detection and forecasting to keep you ahead of the market.",
+          tags: ["Machine Learning", "Forecasting", "Business Intelligence"]
+        },
+        {
+          icon: Cog,
+          title: "Business Process Automation",
+          description: "Automate invoices, approvals, and onboarding with intelligent AI workflows.",
+          tags: ["Workflow Automation", "Process Optimization", "Integration"]
+        },
+        {
+          icon: Eye,
+          title: "Computer Vision Solutions",
+          description: "Intelligent image recognition and automated inspection for quality control.",
+          tags: ["Image Recognition", "Quality Control", "Automation"]
+        }
+      ]
     }
   ];
 
   return (
-    <section id="services" className="py-24 relative">
+    <section id="services" className="py-24 relative bg-background">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center mb-20 animate-fade-up">
+        <div className="text-center mb-24 animate-fade-up">
           <div className="overline mb-6">Our Services</div>
           <h2 className="display-lg mb-8">
             <span className="block">Intelligent Solutions</span>
@@ -63,37 +112,73 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className="glass rounded-2xl p-8 card-hover animate-fade-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Icon */}
-              <div className="w-16 h-16 rounded-2xl bg-gradient-aurora flex items-center justify-center mb-6">
-                <service.icon className="w-8 h-8 text-white" />
-              </div>
-
-              {/* Content */}
-              <h3 className="font-display font-semibold text-xl mb-4 text-foreground">
-                {service.title}
+        {/* Categories of Services */}
+        <div className="space-y-20">
+          {serviceCategories.map((group, groupIndex) => (
+            <div key={group.category} className="space-y-8">
+              <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-6 flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full bg-primary"></span>
+                {group.category}
               </h3>
               
-              <p className="text-secondary mb-6 leading-relaxed">
-                {service.description}
-              </p>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2">
-                {service.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 text-xs font-medium rounded-full glass text-primary border border-primary/20"
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {group.items.map((service, itemIndex) => (
+                  <div
+                    key={service.title}
+                    className="glass rounded-2xl p-7 flex flex-col justify-between hover:scale-[1.02] border border-white/5 hover:border-primary/20 hover:shadow-glow/10 transition-all duration-300 animate-fade-up group"
+                    style={{ animationDelay: `${(groupIndex * 3 + itemIndex) * 0.1}s` }}
                   >
-                    {tag}
-                  </span>
+                    <div>
+                      {/* Top Bar with Icon and Badge */}
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/25">
+                          <service.icon className="w-5 h-5 text-primary" />
+                        </div>
+                        {service.badge && (
+                          <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wide uppercase ${
+                            service.badgeType === 'popular' 
+                              ? 'bg-rose-500/10 text-rose-400 border border-rose-500/20' 
+                              : 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                          }`}>
+                            {service.badge}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Header */}
+                      <h4 className="font-display font-semibold text-lg mb-3 text-foreground tracking-tight group-hover:text-primary transition-colors">
+                        {service.title}
+                      </h4>
+                      
+                      {/* Description */}
+                      <p className="text-secondary text-sm mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-1.5 mb-6">
+                        {service.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2.5 py-1 text-[10.5px] rounded-lg bg-white/5 text-secondary border border-white/5 font-medium"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Button */}
+                    <div>
+                      <button 
+                        onClick={() => navigate('/book')}
+                        className="text-xs font-semibold text-primary/90 hover:text-primary flex items-center gap-1.5 group/btn transition-colors mt-auto"
+                      >
+                        Learn more 
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
+                      </button>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -101,7 +186,7 @@ const Services = () => {
         </div>
 
         {/* Features Strip */}
-        <div className="mt-24 grid md:grid-cols-4 gap-8">
+        <div className="mt-28 grid md:grid-cols-4 gap-8">
           {[
             {
               title: "Seamless API Integrations",
@@ -127,21 +212,21 @@ const Services = () => {
             <div
               key={feature.title}
               className={`text-center animate-fade-up ${
-                index % 2 === 0 ? 'glass rounded-2xl p-6' : 'p-6'
+                index % 2 === 0 ? 'glass rounded-2xl p-6 border border-white/5' : 'p-6'
               }`}
               style={{ animationDelay: `${1 + index * 0.1}s` }}
             >
-              <h4 className="font-display font-semibold text-lg mb-3 text-foreground">
+              <h4 className="font-display font-semibold text-base mb-2.5 text-foreground">
                 {feature.title}
               </h4>
-              <p className="text-secondary text-sm mb-4 leading-relaxed">
+              <p className="text-secondary text-xs mb-4 leading-relaxed">
                 {feature.description}
               </p>
               <div className="flex flex-wrap justify-center gap-1">
                 {feature.keywords.map((keyword) => (
                   <span
                     key={keyword}
-                    className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
+                    className="px-2 py-0.5 text-[10px] rounded bg-primary/10 text-primary border border-primary/20 font-medium"
                   >
                     {keyword}
                   </span>
