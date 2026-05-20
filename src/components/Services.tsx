@@ -12,6 +12,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'motion/react';
 
 const Services = () => {
   const navigate = useNavigate();
@@ -96,37 +97,92 @@ const Services = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1, y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
   return (
-    <section id="services" className="py-24 relative bg-background">
+    <section id="services" className="py-24 relative bg-background overflow-hidden">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center mb-24 animate-fade-up">
-          <div className="overline mb-6">Our Services</div>
-          <h2 className="display-lg mb-8">
+        <div className="text-center mb-24">
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="overline mb-6"
+          >
+            Our Services
+          </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="display-lg mb-8"
+          >
             <span className="block">Intelligent Solutions</span>
             <span className="block text-primary">for Every Challenge</span>
-          </h2>
-          <p className="text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-xl text-secondary max-w-2xl mx-auto leading-relaxed"
+          >
             Transform your business with AI-powered services designed to automate, 
             optimize, and accelerate your growth in the digital landscape.
-          </p>
+          </motion.p>
         </div>
 
         {/* Categories of Services */}
         <div className="space-y-20">
           {serviceCategories.map((group, groupIndex) => (
             <div key={group.category} className="space-y-8">
-              <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-6 flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-primary"></span>
+              <motion.h3 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="font-display text-xl md:text-2xl font-bold text-foreground mb-6 flex items-center gap-2.5"
+              >
+                <span className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(var(--primary-color),0.8)]"></span>
                 {group.category}
-              </h3>
+              </motion.h3>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <motion.div 
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+              >
                 {group.items.map((service, itemIndex) => (
-                  <div
+                  <motion.div
                     key={service.title}
-                    className="glass rounded-2xl p-7 flex flex-col justify-between hover:scale-[1.02] border border-white/5 hover:border-primary/20 hover:shadow-glow/10 transition-all duration-300 animate-fade-up group"
-                    style={{ animationDelay: `${(groupIndex * 3 + itemIndex) * 0.1}s` }}
+                    variants={cardVariants}
+                    whileHover={{ 
+                      y: -8, 
+                      borderColor: "rgba(var(--primary-color),0.25)",
+                      boxShadow: "0 10px 30px -10px rgba(var(--primary-color),0.1)"
+                    }}
+                    className="glass rounded-2xl p-7 flex flex-col justify-between border border-white/5 transition-all duration-300 group"
                   >
                     <div>
                       {/* Top Bar with Icon and Badge */}
@@ -160,7 +216,7 @@ const Services = () => {
                         {service.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-2.5 py-1 text-[10.5px] rounded-lg bg-white/5 text-secondary border border-white/5 font-medium"
+                            className="px-2.5 py-1 text-[10.5px] rounded-lg bg-white/5 text-secondary border border-white/5 font-medium hover:bg-white/10 transition-colors"
                           >
                             {tag}
                           </span>
@@ -178,15 +234,21 @@ const Services = () => {
                         <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
                       </button>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           ))}
         </div>
 
         {/* Features Strip */}
-        <div className="mt-28 grid md:grid-cols-4 gap-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="mt-28 grid md:grid-cols-4 gap-8"
+        >
           {[
             {
               title: "Seamless API Integrations",
@@ -209,12 +271,13 @@ const Services = () => {
               keywords: ["Real-time Data", "Dashboards", "Monitoring"]
             }
           ].map((feature, index) => (
-            <div
+            <motion.div
               key={feature.title}
-              className={`text-center animate-fade-up ${
+              variants={cardVariants}
+              whileHover={{ y: -5 }}
+              className={`text-center ${
                 index % 2 === 0 ? 'glass rounded-2xl p-6 border border-white/5' : 'p-6'
               }`}
-              style={{ animationDelay: `${1 + index * 0.1}s` }}
             >
               <h4 className="font-display font-semibold text-base mb-2.5 text-foreground">
                 {feature.title}
@@ -232,9 +295,9 @@ const Services = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
