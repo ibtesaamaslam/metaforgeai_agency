@@ -57,7 +57,7 @@ const Footer = () => {
                 <Twitter className="w-5 h-5 text-primary" />
               </a>
               <a 
-                href="https://www.instagram.com/meta_forge.ai?igsh=MWh5ZGF5NXJsdTc3eA==" 
+                href="https://www.instagram.com/metaforge.tech/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg glass hover:glass-strong flex items-center justify-center transition-all duration-300 hover:scale-110"

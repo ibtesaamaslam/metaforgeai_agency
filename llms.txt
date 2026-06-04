@@ -26,7 +26,7 @@ Kuwait, Bahrain, Oman, and Egypt.
 ## Contact
 Website: https://metaforgeai.vercel.app
 GitHub: https://github.com/ibtesaamaslam
-Instagram: https://www.instagram.com/metaforgeai
+Instagram: https://www.instagram.com/metaforge.tech/
 
 ## Pages
 / — Homepage: Overview of MetaForgeAI's AI services and value proposition

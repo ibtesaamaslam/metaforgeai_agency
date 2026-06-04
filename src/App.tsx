@@ -12,6 +12,7 @@ import DataSecurity from "./pages/DataSecurity";
 import Book from "./pages/Book";
 import BlogPost from "./pages/BlogPost";
 import PromoBanner from "./components/PromoBanner";
+import PromoBoomModal from "./components/PromoBoomModal";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <PromoBanner />
+          <PromoBoomModal />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

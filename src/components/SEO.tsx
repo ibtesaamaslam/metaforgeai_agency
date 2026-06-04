@@ -64,7 +64,7 @@ const SEO = ({
       },
       "sameAs": [
         "https://github.com/ibtesaamaslam",
-        "https://www.instagram.com/metaforgeai"
+        "https://www.instagram.com/metaforge.tech/"
       ],
       "areaServed": ["PK", "AE", "SA", "QA", "KW", "BH", "OM", "EG"],
       "knowsAbout": [
@@ -104,7 +104,7 @@ const SEO = ({
       },
       "sameAs": [
         "https://github.com/ibtesaamaslam",
-        "https://www.instagram.com/metaforgeai"
+        "https://www.instagram.com/metaforge.tech/"
       ]
     });
 

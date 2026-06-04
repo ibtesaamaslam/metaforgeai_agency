@@ -84,7 +84,7 @@ const Navigation = () => {
                 <Twitter className="w-4 h-4" />
               </a>
               <a 
-                href="https://www.instagram.com/meta_forge.ai?igsh=MWh5ZGF5NXJsdTc3eA==" 
+                href="https://www.instagram.com/metaforge.tech/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg glass hover:glass-strong flex items-center justify-center transition-all duration-300 hover:scale-110 text-secondary hover:text-primary"

@@ -19,7 +19,57 @@ const Services = () => {
 
   const serviceCategories = [
     {
-      category: "FLAGSHIP SERVICES",
+      category: "Flagship Services",
+      items: [
+        {
+          icon: Cog,
+          title: "Intelligent Business Solutions",
+          description: "Business Solutions and intelligent automation replace manual labor-intensive corporate procedures with secure cognitive automated pipelines. MetaForgeAI engineers custom-tailored automation setups to streamline lead capture, vendor onboarding, and active business systems.",
+          whyBulletPoints: [
+            "Complete eradication of manual double-data keying and data errors.",
+            "Instant automated invoice structure analysis and validation routing.",
+            "Streamlined contractor onboarding with optical character recognition (OCR).",
+            "Continuous automated logging to guarantee pristine compliance audits.",
+            "Over 300% operational throughput expansion for administrative staff."
+          ],
+          badge: "Most popular",
+          badgeType: "popular",
+          tags: ["Business Solutions", "Workflow Automation", "Process Optimization"]
+        },
+        {
+          icon: Globe,
+          title: "Custom AI Websites & Smart Apps",
+          description: "Smart AI Web Applications customize user frontends, layouts, and recommendations dynamically based on live session behavior. MetaForgeAI constructs highly responsive, beautiful, type-safe web portals designed with intelligent, context-aware interactive layers.",
+          whyBulletPoints: [
+            "Average 35% conversion expansion through personalized user routing.",
+            "Fluid streaming real-time content delivery built with React/Vite.",
+            "Responsive screen layouts that resize and adapt without delays.",
+            "Built-in advanced interactive voice and speech-to-text components.",
+            "Aesthetic typography and user layouts with smooth, purpose-driven transitions."
+          ],
+          badge: "Most popular",
+          badgeType: "popular",
+          tags: ["AI Web Apps", "Custom Websites", "UX Optimization"]
+        },
+        {
+          icon: Cpu,
+          title: "Custom AI Models & LLM Fine-tuning",
+          description: "LLM fine-tuning calibrates open-source developer weights (like Llama and Mistral) on domain-specific datasets for proprietary terminology and task-specific alignment. MetaForgeAI refines and aligns models for corporate needs with ultimate accuracy.",
+          whyBulletPoints: [
+            "Tailored alignment with proprietary enterprise lexicons and acronyms.",
+            "Drastic latency reduction compared to heavy raw base model APIs.",
+            "Can run fully locally or under private cloud clusters for strict isolation.",
+            "Substantial savings on commercial API calls under high volume.",
+            "Full ownership and security preservation of model weights."
+          ],
+          badge: "New",
+          badgeType: "new",
+          tags: ["Private Models", "Fine Tuning", "Proprietary Data"]
+        }
+      ]
+    },
+    {
+      category: "Build & Integrate",
       items: [
         {
           icon: Database,
@@ -69,23 +119,8 @@ const Services = () => {
       ]
     },
     {
-      category: "BUILD & INTEGRATE",
+      category: "Specialized Solutions",
       items: [
-        {
-          icon: Cpu,
-          title: "LLM Fine-tuning & Custom Models",
-          description: "LLM fine-tuning calibrates open-source developer weights (like Llama and Mistral) on domain-specific datasets for proprietary terminology and task-specific alignment. MetaForgeAI refines and aligns models for corporate needs in Pakistan and the wider MENA region.",
-          whyBulletPoints: [
-            "Tailored alignment with proprietary enterprise lexicons and acronyms.",
-            "Drastic latency reduction compared to heavy raw base model APIs.",
-            "Can run fully locally or under private cloud clusters for strict isolation.",
-            "Substantial savings on commercial API calls under high volume.",
-            "Full ownership and security preservation of model weights."
-          ],
-          badge: "New",
-          badgeType: "new",
-          tags: ["Private Models", "Fine Tuning", "Proprietary Data"]
-        },
         {
           icon: Unplug,
           title: "AI Integration & API Consulting",
@@ -100,24 +135,6 @@ const Services = () => {
           tags: ["Legacy Integration", "API Engineering", "Consulting"]
         },
         {
-          icon: Globe,
-          title: "Smart AI Web Apps & Personalization",
-          description: "Smart AI Web Applications customize user frontends and recommendations dynamically based on live session behavior. MetaForgeAI constructs responsive, type-safe web portals designed with intelligent, context-aware interactive layers.",
-          whyBulletPoints: [
-            "Average 35% conversion expansion through personalized user routing.",
-            "Fluid streaming real-time content delivery built with React/Vite.",
-            "Responsive screen layouts that resize and adapt without delays.",
-            "Built-in advanced interactive voice and speech-to-text components.",
-            "Aesthetic typography and user layouts with smooth, purpose-driven transitions."
-          ],
-          tags: ["AI Web Apps", "Personalization", "UX Optimization"]
-        }
-      ]
-    },
-    {
-      category: "SPECIALIZED SOLUTIONS",
-      items: [
-        {
           icon: TrendingUp,
           title: "Predictive Analytics",
           description: "Predictive Analytics maps historical corporate data feeds onto machine learning models to identify anomalies, forecast regressions, and predict market shifts. MetaForgeAI builds analytics pipelines that feed directly into business dashboards.",
@@ -129,19 +146,6 @@ const Services = () => {
             "Actionable insights that empower proactive strategic corporate strategies."
           ],
           tags: ["Machine Learning", "Forecasting", "Business Intelligence"]
-        },
-        {
-          icon: Cog,
-          title: "Business Process Automation",
-          description: "Business Process Automation (BPA) replaces labor-intensive back-office procedures with secure cognitive automated chains. MetaForgeAI optimizes high-volume operations including invoice processing, document parsing, and vendor onboarding.",
-          whyBulletPoints: [
-            "Complete eradication of manual double-data keying errors.",
-            "Instant automated invoice structure analysis and validation routing.",
-            "Streamlined contractor onboarding with optical character recognition (OCR).",
-            "Continuous automated logging to guarantee pristine compliance audits.",
-            "Over 300% operational throughput expansion for administrative staff."
-          ],
-          tags: ["Workflow Automation", "Process Optimization", "Integration"]
         },
         {
           icon: Eye,
@@ -223,7 +227,7 @@ const Services = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="font-display text-xl md:text-2xl font-bold text-foreground mb-6 flex items-center gap-2.5"
+                className="font-display text-xl md:text-2xl font-semibold text-foreground mb-6 flex items-center gap-2.5"
               >
                 <span className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(var(--primary-color),0.8)]"></span>
                 {group.category}
