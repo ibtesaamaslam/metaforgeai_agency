@@ -11,6 +11,7 @@ import TermsOfService from "./pages/TermsOfService";
 import DataSecurity from "./pages/DataSecurity";
 import Book from "./pages/Book";
 import BlogPost from "./pages/BlogPost";
+import PromoBanner from "./components/PromoBanner";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <PromoBanner />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

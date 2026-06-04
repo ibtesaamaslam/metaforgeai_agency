@@ -89,6 +89,7 @@ const Hero = () => {
             whileTap={{ scale: 0.98 }}
             onClick={handleBookCall}
             className="btn-primary"
+            aria-label="Book a free 15-minute Discovery Consultation with MetaForgeAI"
           >
             Book a 15-min Call
           </motion.button>
@@ -97,6 +98,7 @@ const Hero = () => {
             whileTap={{ scale: 0.98 }}
             onClick={scrollToAbout}
             className="btn-secondary"
+            aria-label="Learn more about what MetaForgeAI is and who we serve"
           >
             What is MetaForgeAI?
           </motion.button>
@@ -111,6 +113,7 @@ const Hero = () => {
           <button 
             onClick={scrollToAbout}
             className="inline-flex items-center justify-center p-3 rounded-full glass hover:glass-strong transition-all duration-300 animate-float"
+            aria-label="Scroll down to the About section to read more details"
           >
             <ChevronDown className="w-6 h-6 text-primary" />
           </button>

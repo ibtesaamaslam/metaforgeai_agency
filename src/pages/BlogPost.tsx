@@ -105,6 +105,7 @@ const BlogPost = () => {
               <img 
                 src={post.image} 
                 alt={post.title}
+                loading="lazy"
                 referrerPolicy="no-referrer"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;

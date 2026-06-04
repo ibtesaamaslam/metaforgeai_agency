@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import Portfolio from '@/components/Portfolio';
+import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import Blog from '@/components/Blog';
 import CTA from '@/components/CTA';
@@ -30,8 +31,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO 
-        title="MetaForgeAI | Enterprise AI Solutions & Automation"
-        description="Transform your enterprise with MetaForgeAI. We specialize in custom AI solution development, intelligent automation, and predictive analytics."
+        title="MetaForgeAI — Enterprise AI Agency | Pakistan & MENA"
+        description="MetaForgeAI builds RAG systems, AI agents, LLM fine-tuning pipelines, and automation workflows for enterprises in Pakistan and MENA. Trusted AI solutions, shipped fast."
         canonical="https://metaforgeai.vercel.app"
       />
       <Navigation />
@@ -39,6 +40,7 @@ const Index = () => {
       <About />
       <Services />
       <Portfolio />
+      <Testimonials />
       <FAQ />
       <Blog />
       <CTA />

@@ -103,18 +103,26 @@ const FAQ = () => {
                 return (
                   <div
                     key={index}
-                    className="glass rounded-2xl overflow-hidden animate-fade-up"
+                    className={`rounded-2xl border transition-all duration-300 overflow-hidden animate-fade-up ${
+                      isOpen 
+                        ? 'bg-slate-900/40 border-primary/40 shadow-[0_0_25px_rgba(124,58,237,0.06)]' 
+                        : 'glass border-white/5 hover:border-white/15'
+                    }`}
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <button
                       onClick={() => setOpenIndex(isOpen ? null : index)}
-                      className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-300"
+                      className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-300 focus:outline-none"
                     >
                       <div className="flex items-center space-x-4">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-aurora flex items-center justify-center flex-shrink-0">
-                          <IconComponent className="w-5 h-5 text-white" />
+                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
+                          isOpen ? 'bg-primary' : 'bg-gradient-aurora'
+                        }`}>
+                          <IconComponent className="w-5 h-5 text-white animate-pulse" />
                         </div>
-                        <h3 className="font-display font-semibold text-lg text-foreground pr-4">
+                        <h3 className={`font-display font-semibold text-base md:text-lg transition-colors duration-300 pr-4 ${
+                          isOpen ? 'text-primary' : 'text-foreground'
+                        }`}>
                           {faq.question}
                         </h3>
                       </div>
@@ -128,9 +136,9 @@ const FAQ = () => {
                     </button>
                     
                     {isOpen && (
-                      <div className="px-6 pb-6 animate-fade-up">
-                        <div className="pl-14">
-                          <p className="text-secondary leading-relaxed">
+                      <div className="px-6 pb-6 animate-fade-in border-t border-white/5 pt-5 ml-6 mr-6">
+                        <div className="pl-8">
+                          <p className="text-secondary leading-relaxed text-sm">
                             {faq.answer}
                           </p>
                         </div>

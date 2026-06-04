@@ -37,16 +37,13 @@ const About = () => {
 
           {/* Right Column - Content */}
           <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
+            {/* WHO, WHAT, WHERE, WHY Copy */}
             <p className="text-lg text-secondary leading-relaxed mb-8">
-              MetaForgeAI represents the next evolution in artificial intelligence solutions. 
-              We combine cutting-edge AI technology with human creativity to deliver 
-              transformative results for businesses ready to lead in the digital future.
+              <strong>MetaForgeAI</strong> is a premier <strong>Pakistan-based enterprise AI agency</strong> delivering production-ready, enterprise-grade AI applications. Founded by <strong>Ibtesaam Aslam</strong>, a full-stack developer and AI systems engineer, our agency specializes in engineering secure <strong>RAG systems, autonomous AI agent workflows, domain-specific LLM fine-tuning pipelines, intelligent AI chatbots, and comprehensive business process automation (BPA) architectures</strong>.
             </p>
             
             <p className="text-lg text-secondary leading-relaxed mb-12">
-              Our team of AI specialists, designers, and engineers work collaboratively 
-              to forge intelligent solutions that don't just automate—they innovate, 
-              predict, and adapt to your unique business needs.
+              Strategically headquartered in Pakistan and serving emerging corporate hubs across the <strong>MENA region</strong> (including the UAE, Saudi Arabia, Qatar, Egypt, and Kuwait), our core mission is <strong>to make highly sophisticated enterprise-grade AI accessible, performant, and secure for businesses navigating modern markets</strong>. We collaborate with mid-market companies and enterprises to design intelligent setups that don't just automate tasks—they radically improve accuracy, scale throughput, and unlock measurable ROI.
             </p>
 
             {/* Features */}
@@ -83,6 +80,8 @@ const About = () => {
             </div>
           </div>
         </div>
+
+
       </div>
     </section>
   );

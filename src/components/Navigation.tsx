@@ -4,16 +4,20 @@ import { Twitter, Instagram } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const hasBanner = true;
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 15);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const navItems = [
@@ -37,10 +41,12 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'py-4 glass-strong backdrop-blur-glass-strong' 
-        : 'py-8 bg-transparent'
+        ? 'top-0 py-4 glass-strong backdrop-blur-glass-strong shadow-lg shadow-purple-950/20' 
+        : hasBanner 
+          ? 'top-[44px] py-8 bg-transparent' 
+          : 'top-0 py-8 bg-transparent'
     }`}>
       <div className="container-custom">
         <div className="flex items-center justify-between">
