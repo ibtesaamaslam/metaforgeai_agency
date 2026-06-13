@@ -1,6 +1,9 @@
 import { ArrowRight, Calendar } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const CTA = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background Effects */}
@@ -20,16 +23,14 @@ const CTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <a 
-              href="mailto:info.metaforgeai@gmail.com?subject=Consultation%20Request&body=Name%3A%20%0A%0AMessage%3A%20"
-              target="_top"
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center gap-3 text-lg px-10 py-5"
+            <button 
+              onClick={() => navigate('/book')}
+              className="btn-primary inline-flex items-center gap-3 text-lg px-10 py-5 active:scale-95 transition-transform"
             >
               <Calendar className="w-6 h-6" />
               Book a 15-min Call
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </button>
             
             <div className="text-secondary text-sm">
               <p>Free consultation • No commitment required</p>

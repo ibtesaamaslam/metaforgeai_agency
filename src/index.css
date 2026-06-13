@@ -61,6 +61,38 @@
     --radius-lg: 1.5rem;
     --container-padding: 2rem;
   }
+
+  html.light {
+    /* Premium Pristine White/Light Theme Override */
+    --background: 240 20% 98%; /* #F8F9FA - modern off-white background */
+    --foreground: 224 71.4% 4.1%; /* Deep slate black text */
+    
+    /* Card System */
+    --card: 0 0% 100%; /* Pure white clean card background */
+    --card-foreground: 224 71.4% 4.1%;
+    --card-glass: 0 0% 0% / 0.02;
+    --card-border: 240 10% 4% / 0.07;
+    
+    /* Purple Brand Gradients adapted for high light-mode contrast */
+    --primary: 262 87% 53%; /* Vivid purple with rich contrast */
+    --primary-light: 262 83% 45%; /* Deep brand purple for readable text */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Text Hierarchy */
+    --text-primary: 224 71.4% 4.1%;
+    --text-secondary: 240 5.2% 33.9%; /* Rich carbon gray */
+    --text-tertiary: 240 3.8% 46.1%;
+    
+    /* Surface Elements */
+    --border: 240 5.9% 90%; /* Light layout borders */
+    --input: 240 5.9% 95%;
+    --ring: 262 87% 53%;
+    
+    /* Glass Effects inside Light Mode */
+    --glass-bg: 0 0% 100% / 0.72;
+    --glass-border: 240 10% 4% / 0.07;
+    --glass-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.06);
+  }
 }
 
 @layer base {
@@ -178,5 +210,39 @@
   .container-custom {
     @apply mx-auto px-6 lg:px-8;
     max-width: 1200px;
+  }
+
+  /* Light Theme glass overrides */
+  html.light .glass {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+  }
+  
+  html.light .glass-strong {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(15, 23, 42, 0.11);
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.05);
+  }
+  
+  html.light .btn-secondary {
+    background: rgba(15, 23, 42, 0.03);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  
+  html.light .btn-secondary:hover {
+    background: rgba(15, 23, 42, 0.06);
+    border-color: rgba(15, 23, 42, 0.15);
+  }
+  
+  html.light .card-hover:hover {
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.06), 0 0 30px hsl(262 87% 56% / 0.05);
+    border-color: rgba(15, 23, 42, 0.12);
+  }
+
+  /* Light theme aurora-bg blend */
+  html.light .aurora-bg {
+    opacity: 0.15;
+    filter: blur(100px);
   }
 }

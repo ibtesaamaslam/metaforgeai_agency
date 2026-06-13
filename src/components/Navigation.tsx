@@ -1,12 +1,29 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Twitter, Instagram } from 'lucide-react';
+import { Twitter, Instagram, Sun, Moon } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isLight, setIsLight] = useState(false);
   const hasBanner = true;
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    setIsLight(document.documentElement.classList.contains('light'));
+  }, []);
+
+  const toggleTheme = () => {
+    if (document.documentElement.classList.contains('light')) {
+      document.documentElement.classList.remove('light');
+      localStorage.setItem('metaforge-theme', 'dark');
+      setIsLight(false);
+    } else {
+      document.documentElement.classList.add('light');
+      localStorage.setItem('metaforge-theme', 'light');
+      setIsLight(true);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -117,34 +134,40 @@ const Navigation = () => {
             </div>
 
             <div className="hidden lg:flex items-center space-x-1.5">
-              {navItems.map((item, index) => (
+              {navItems.map((item) => (
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className={`relative px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border border-transparent hover:border-primary/30 ${
-                    index === 0 
-                      ? 'glass-strong text-foreground hover:bg-primary/10 hover:text-primary' 
-                      : 'glass text-secondary hover:text-foreground hover:bg-white/5'
-                  } backdrop-blur-md hover:shadow-glow hover:scale-105`}
+                  className="relative px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border border-transparent hover:border-primary/30 glass text-secondary hover:text-foreground hover:bg-white/5 backdrop-blur-md hover:shadow-glow hover:scale-105"
                 >
                   <span className="relative z-10">{item.label}</span>
-                  {index === 0 && (
-                    <div className="absolute inset-0 bg-gradient-aurora opacity-10 rounded-xl"></div>
-                  )}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div className="flex-shrink-0">
-            <button 
-              onClick={() => navigate('/book')}
-              className="relative px-6 py-3 rounded-xl font-semibold text-sm bg-gradient-aurora text-white hover:shadow-glow-lg hover:scale-105 transition-all duration-300 border border-primary/30"
+          {/* CTA & Theme Toggle Button */}
+          <div className="flex items-center gap-3">
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="w-10 h-10 rounded-xl glass hover:glass-strong flex items-center justify-center transition-all duration-300 hover:scale-110 text-secondary hover:text-primary relative z-10"
+              aria-label="Toggle Theme"
+              id="theme-toggle"
             >
-              <span className="relative z-10">Book a 15-min Call</span>
-              <div className="absolute inset-0 bg-gradient-aurora opacity-80 rounded-xl"></div>
+              {isLight ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
             </button>
+
+            {/* CTA Button */}
+            <div className="flex-shrink-0">
+              <button 
+                onClick={() => navigate('/book')}
+                className="relative px-6 py-3 rounded-xl font-semibold text-sm bg-gradient-aurora text-white hover:shadow-glow-lg hover:scale-105 transition-all duration-300 border border-primary/30"
+              >
+                <span className="relative z-10">Book a 15-min Call</span>
+                <div className="absolute inset-0 bg-gradient-aurora opacity-80 rounded-xl"></div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
