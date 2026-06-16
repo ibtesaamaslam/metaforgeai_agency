@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { 
   Globe, 
   MessageCircle, 
@@ -9,13 +10,22 @@ import {
   Workflow,
   Cpu,
   Unplug,
-  ArrowRight
+  ArrowRight,
+  ChevronDown
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 
 const Services = () => {
   const navigate = useNavigate();
+  const [expandedServices, setExpandedServices] = useState<Record<string, boolean>>({});
+
+  const toggleServiceExpand = (serviceTitle: string) => {
+    setExpandedServices(prev => ({
+      ...prev,
+      [serviceTitle]: !prev[serviceTitle]
+    }));
+  };
 
   const serviceCategories = [
     {
@@ -280,17 +290,37 @@ const Services = () => {
 
                       {/* WHY METAFORGEAI? Bullet Points Section */}
                       <div className="mb-6 pt-4 border-t border-white/5">
-                        <span className="text-[11px] font-mono uppercase tracking-wider text-primary font-bold block mb-2.5">
-                          Why MetaForgeAI?
-                        </span>
-                        <ul className="space-y-2">
-                          {service.whyBulletPoints.map((bullet, idx) => (
-                            <li key={idx} className="text-xs text-secondary flex items-start gap-2 leading-relaxed">
-                              <span className="text-primary font-bold mt-0.5 select-none">•</span>
-                              <span>{bullet}</span>
-                            </li>
-                          ))}
-                        </ul>
+                        <button
+                          onClick={() => toggleServiceExpand(service.title)}
+                          className="flex items-center justify-between w-full text-[11px] font-mono uppercase tracking-wider text-primary font-bold group/why focus:outline-none cursor-pointer"
+                          aria-expanded={expandedServices[service.title] || false}
+                        >
+                          <span className="hover:text-primary transition-colors flex items-center gap-1">
+                            Why MetaForgeAI?
+                          </span>
+                          <ChevronDown className={`w-3.5 h-3.5 text-primary/70 group-hover/why:text-primary transition-transform duration-300 ${
+                            expandedServices[service.title] ? 'rotate-180' : ''
+                          }`} />
+                        </button>
+                        
+                        <motion.div 
+                          initial={false}
+                          animate={{ 
+                            height: expandedServices[service.title] ? "auto" : 0,
+                            opacity: expandedServices[service.title] ? 1 : 0
+                          }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="overflow-hidden"
+                        >
+                          <ul className="space-y-2 mt-3 pt-1">
+                            {service.whyBulletPoints.map((bullet, idx) => (
+                              <li key={idx} className="text-xs text-secondary flex items-start gap-2 leading-relaxed">
+                                <span className="text-primary font-bold mt-0.5 select-none">•</span>
+                                <span>{bullet}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </motion.div>
                       </div>
 
                       {/* Tags */}

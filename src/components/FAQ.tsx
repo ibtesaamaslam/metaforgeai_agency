@@ -112,9 +112,9 @@ const FAQ = () => {
                   >
                     <button
                       onClick={() => setOpenIndex(isOpen ? null : index)}
-                      className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-300 focus:outline-none"
+                      className="w-full p-4 sm:p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-300 focus:outline-none"
                     >
-                      <div className="flex items-center space-x-4">
+                      <div className="flex items-center space-x-3 sm:space-x-4">
                         <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
                           isOpen ? 'bg-primary' : 'bg-gradient-aurora'
                         }`}>
@@ -136,8 +136,8 @@ const FAQ = () => {
                     </button>
                     
                     {isOpen && (
-                      <div className="px-6 pb-6 animate-fade-in border-t border-white/5 pt-5 ml-6 mr-6">
-                        <div className="pl-8">
+                      <div className="px-4 sm:px-6 pb-4 sm:pb-6 animate-fade-in border-t border-white/5 pt-4 sm:pt-5 mx-2 sm:mx-6">
+                        <div className="pl-0 sm:pl-8">
                           <p className="text-secondary leading-relaxed text-sm">
                             {faq.answer}
                           </p>

@@ -55,7 +55,8 @@ const PromoBanner = () => {
               <Flame className="w-3 h-3 text-rose-400 animate-bounce" /> EXCLUSIVE LAUNCH OFFER
             </span>
             <span className="truncate font-semibold text-slate-200">
-              FIRST 10 CUSTOMERS SECURE <span className="underline decoration-primary decoration-2 font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-300 drop-shadow-[0_0_10px_rgba(245,158,11,0.2)]">30% INSTANT DISCOUNT</span> ON BUSINESS SOLUTIONS & CUSTOM AI WEBSITES!
+              <span className="hidden sm:inline">FIRST 10 CUSTOMERS SECURE <span className="underline decoration-primary decoration-2 font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-300 drop-shadow-[0_0_10px_rgba(245,158,11,0.2)]">30% INSTANT DISCOUNT</span> ON BUSINESS SOLUTIONS & CUSTOM AI WEBSITES!</span>
+              <span className="inline sm:hidden font-bold">LAUNCH PROMO: <span className="text-amber-300 font-extrabold shadow-amber-500/20">30% OFF</span> ALL AI SOLUTIONS!</span>
             </span>
           </div>
         </div>

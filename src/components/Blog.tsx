@@ -73,7 +73,7 @@ const Blog = () => {
               className="glass rounded-3xl overflow-hidden card-hover group cursor-pointer"
             >
               <div className="grid lg:grid-cols-2 gap-0">
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden h-48 sm:h-64 lg:h-auto min-h-[220px] lg:min-h-full">
                   <img 
                     src={featuredPost.image} 
                     alt={featuredPost.title}
@@ -114,8 +114,8 @@ const Blog = () => {
                     {featuredPost.excerpt}
                   </p>
                   
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4 text-sm text-secondary">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="flex items-center space-x-4 text-xs sm:text-sm text-secondary">
                       <div className="flex items-center space-x-2">
                         <Calendar className="w-4 h-4" />
                         <span>{featuredPost.date}</span>
@@ -126,7 +126,7 @@ const Blog = () => {
                       </div>
                     </div>
                     
-                    <button className="flex items-center space-x-2 text-primary hover:text-primary-light transition-colors group">
+                    <button className="flex items-center justify-center sm:justify-start space-x-2 text-primary hover:text-primary-light transition-colors group w-full sm:w-auto mt-2 sm:mt-0 py-2 sm:py-0 border border-white/5 sm:border-transparent rounded-xl sm:rounded-none">
                       <span className="font-medium">Read Article</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
